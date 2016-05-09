@@ -6,8 +6,8 @@ describe FixedArray do
   let(:fixed_array) { FixedArray.new(size) }
 
   describe "#new" do
-    it "is instatiated with space for 'size' elements" do
-      expect(fixed_array.array.length).to be size
+    it "is instantiated with space for 'size' elements" do
+      expect(fixed_array.length).to be size
     end
   end
 

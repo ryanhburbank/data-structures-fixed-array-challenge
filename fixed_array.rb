@@ -17,4 +17,8 @@ class FixedArray
     raise OutOfBoundsException if array.length < index
     @array[index] = value
   end
+
+  def length
+    @array.length
+  end
 end
