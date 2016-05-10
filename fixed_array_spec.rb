@@ -9,6 +9,12 @@ describe FixedArray do
     it "is instantiated with space for 'size' elements" do
       expect(fixed_array.length).to be size
     end
+
+    it "instantiates each element with a value of nil" do
+      fixed_array.each do |element|
+        expect(element).to be_nil
+      end
+    end
   end
 
   describe "#get" do

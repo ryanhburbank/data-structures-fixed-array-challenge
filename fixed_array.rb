@@ -10,15 +10,21 @@ class FixedArray
 
   def get(index)
     raise OutOfBoundsException if array.length < index
-    @array[index]
+    array[index]
   end
 
   def set(index, value)
     raise OutOfBoundsException if array.length < index
-    @array[index] = value
+    array[index] = value
   end
 
   def length
-    @array.length
+    array.length
+  end
+
+  def each(&block)
+    array.length.times do |i|
+      block.call(array[i])
+    end
   end
 end
