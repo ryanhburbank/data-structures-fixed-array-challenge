@@ -17,6 +17,12 @@ describe FixedArray do
     end
   end
 
+  describe "#each" do
+    it "returns the array" do
+      expect(fixed_array.each {|i| i }).to eq fixed_array.array
+    end
+  end
+
   describe "#get" do
     let(:test_value) { "A test value" }
 

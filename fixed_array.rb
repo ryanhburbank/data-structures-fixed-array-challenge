@@ -5,26 +5,32 @@ class FixedArray
 
   def initialize(size)
     @array = {}
+    @size = size
     size.times {|i| @array[i] = nil }
   end
 
   def get(index)
-    raise OutOfBoundsException if array.length < index
+    ensure_within_bounds(index)
     array[index]
   end
 
   def set(index, value)
-    raise OutOfBoundsException if array.length < index
+    ensure_within_bounds(index)
     array[index] = value
   end
 
   def length
-    array.length
+    @size
   end
 
   def each(&block)
-    array.length.times do |i|
-      block.call(array[i])
-    end
+    array.length.times { |i| block.call(array[i]) }
+    array
+  end
+
+  private
+
+  def ensure_within_bounds(index)
+    raise OutOfBoundsException if length < index
   end
 end
