@@ -26,6 +26,16 @@ describe FixedArray do
   describe "#get" do
     let(:test_value) { "A test value" }
 
+    context "there is an element at the specified index" do
+      before do
+        fixed_array.set(0, test_value)
+      end
+
+      it "returns the value from that index position" do
+        expect(fixed_array.get(0)).to eq test_value
+      end
+    end
+
     context "there is no element at the specified index" do
       let(:out_of_bounds) { size + 1 }
 
