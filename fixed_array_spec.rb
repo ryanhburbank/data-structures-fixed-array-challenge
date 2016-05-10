@@ -44,6 +44,10 @@ describe FixedArray do
         fixed_array.set(0, test_value)
         expect(fixed_array.get(0)).to eq test_value
       end
+
+      it "returns the element" do
+        expect(fixed_array.set(0, test_value)).to eq test_value
+      end
     end
 
     context "there is no element at the specified index" do
